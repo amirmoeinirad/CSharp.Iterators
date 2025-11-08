@@ -33,6 +33,9 @@ namespace IteratorsDemo
 
 
         // Iterator method using 'yield return' to return values one at a time.
+        // If the method was created without 'yield', it would return all values of the IEnumerable<int> collection at once.
+        // In that case, the foreach loop would be executed only one time.
+        // However, now, the foreach loop is iterated three times, once for each yield return statement.
         public static IEnumerable<int> CountToThree()
         {
             try
@@ -44,7 +47,7 @@ namespace IteratorsDemo
             finally
             {
                 // Cleanup after lazy execution.
-                Console.WriteLine("\nCleanup in finally block.");
+                Console.WriteLine("\nCleanup in the finally block.");
             }
         }
     }
